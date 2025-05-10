@@ -39,6 +39,11 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
 </head>
 <body>
 
@@ -177,8 +182,9 @@
           <div class="content has-text-justified">
             <p>
               This figure outlines our contact-aware Fisher information maximization approach. 
-              Given a prior on the parameter, we plan trajectories that excite information-rich contact modes. 
-              We then apply the planned trajectories to the robot and gather sensor measurements. 
+              Given a prior \(p(\theta)\) on the parameter \(\theta\) with variance \(\Sigma_\theta\), 
+              we plan trajectories \(\hat{\tau}\) that produces an expected contact dataset \(\hat{D}\) that excite information-rich contact modes. 
+              We then apply the planned trajectories to the robot and gather sensor measurements that comprise our dataset \(D\). 
               These measurements are used to update the parameters and the variance of the prior to obtain the posterior. 
               We repeat this process until the robot estimates parameters at a parameter certainty tolerance of choice.
             </p>
