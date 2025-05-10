@@ -183,10 +183,50 @@
             <p>
               This figure outlines our contact-aware Fisher information maximization approach. 
               Given a prior \(p(\theta)\) on the parameter \(\theta\) with variance \(\Sigma_\theta\), 
-              we plan trajectories \(\hat{\tau}\) that produces an expected contact dataset \(\hat{D}\) that excite information-rich contact modes. 
-              We then apply the planned trajectories to the robot and gather sensor measurements that comprise our dataset \(D\). 
+              we plan trajectories \(\hat{\tau}\) that produces an expected contact dataset \(\hat{D}\) that 
+              excites information-rich contact modes. 
+              We then apply the planned trajectories to the robot and gather sensor measurements that comprise 
+              our dataset \(D\). 
               These measurements are used to update the parameters and the variance of the prior to obtain the posterior. 
               We repeat this process until the robot estimates parameters at a parameter certainty tolerance of choice.
+            </p>
+          </div>
+      </div>
+    </div>
+    <!--/ Architecture. -->
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Architecture. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Comparison to Basline</h2>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full-width">
+        <img src="./static/images/[FIG]-baseline_comparison.jpg"
+                 class="comparison-image"
+                 alt="Basline Comparison image"/>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              We compare our experimental design approach with a baseline similar to <a href="https://arxiv.org/pdf/2404.12308">ASID</a> for all robot scenarios. 
+              The baseline implements a belief-space planning controller that reasons about contact na\"ively. 
+              We evaluate each robot scenario over a finite number of experiments. 
+              Here, we model the parameter error as \(\%\mathrm{err} = 100 (\hat{\theta} - \theta^*)/\theta^*\), 
+              where \(\hat{\theta}\) is the current estimate and \(\theta^*\) is the true parameter. 
+              By maximizing the contact-aware Fisher information, 
+              we see that the robot seeks contacts that are information-rich about the unknown parameters of interest, 
+              and thus converging closer to the true parameter values \(\theta^*\), with resulting higher 
+              Fisher information gains.
             </p>
           </div>
       </div>
